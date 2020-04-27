@@ -19,8 +19,11 @@ public class Task extends BaseTask {
     public Task() {
     }
 
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
 
-    void setDeadline(final LocalDateTime deadline) {
+    public void setDeadline(final LocalDateTime deadline) {
         this.deadline = deadline;
     }
 

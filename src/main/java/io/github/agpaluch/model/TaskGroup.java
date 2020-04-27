@@ -1,9 +1,9 @@
 package io.github.agpaluch.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.Set;
 
 
@@ -12,6 +12,7 @@ import java.util.Set;
 public class TaskGroup extends BaseTask{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "group")
+    @JsonIgnore
     private Set<Task> tasks;
 
     public TaskGroup() {
